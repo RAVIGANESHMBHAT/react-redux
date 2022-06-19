@@ -27,4 +27,5 @@
 * The global state of your application is stored as an object inside a single store.
 * The only way to change the state is to dispatch an action, an object that describes what happened.
 * To specify how state tree is updated based on acyions, you write pure reducers.
+![image](https://user-images.githubusercontent.com/41186067/174474835-efc351bf-8707-4baf-b6ae-8575b21d0ee7.png)
 
