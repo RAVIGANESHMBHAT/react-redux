@@ -29,3 +29,9 @@
 * To specify how state tree is updated based on acyions, you write pure reducers.
 ![image](https://user-images.githubusercontent.com/41186067/174474835-efc351bf-8707-4baf-b6ae-8575b21d0ee7.png)
 
+### Redux store responsibilities
+* Holds application state
+* Allows access to state via getState()
+* Allows state to be updated via dispatch(action)
+* Registers listeners via subscribe(listener)
+* Handles unregistering of listeners via the function returned by subscriber(listener)
