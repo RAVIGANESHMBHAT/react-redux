@@ -35,3 +35,8 @@
 * Allows state to be updated via dispatch(action)
 * Registers listeners via subscribe(listener)
 * Handles unregistering of listeners via the function returned by subscriber(listener)
+
+
+### Immer library
+
+#### When we need to create the copy of object, we usually use spread operator and update the required attribute of the object with new values. But it will be difficult with nested objects. So, we can use the Immer library.
