@@ -55,3 +55,11 @@
 
 #### Async action creators are -> axios: Request to an API endpoint, redux-thunk: define async action creator
 #### The Thunk middleware allows the action creator to return the function instead of action.
+
+## Redux Toolkits
+
+### Redux concerns
+* Redux required too much boilerplate code (Action, Action object, Action creator, Switch statement in a reducer)
+* A lot of other packages have to be installed to work with redux (EG: For async actions, we need Redux-Thunk, For handling nested state updates, we need Immer, ...)
+* Need to improve the developer experience for redux.
+
