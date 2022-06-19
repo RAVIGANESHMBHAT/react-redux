@@ -49,4 +49,9 @@
 
 ### Async Actions
 
-#### 
+#### ...
+
+### Redux Thunk Middleware
+
+#### Async action creators are -> axios: Request to an API endpoint, redux-thunk: define async action creator
+#### The Thunk middleware allows the action creator to return the function instead of action.

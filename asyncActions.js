@@ -2,6 +2,8 @@ const redux = require("redux");
 const applyMiddleware = redux.applyMiddleware;
 const reduxLogger = require("redux-logger");
 const logger = reduxLogger.createLogger();
+const thunkMiddleware = require("redux-thunk").default;
+const axios = require("axios");
 
 const initialState = {
   loading: false,
@@ -36,9 +38,9 @@ const fetchUsersFailed = (error) => {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_USERS_REQUESTED:
-          return {
-          ...state,
-        loading: true
+      return {
+        ...state,
+        loading: true,
       };
     case FETCH_USERS_SUCCEEDED:
       return {
@@ -57,17 +59,37 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-const store = redux.createStore(reducer, applyMiddleware(logger));
+const fetchUsers = () => {
+  return function (dispatch) {
+    dispatch(fetchUsersRequest());
+    axios
+      .get("https://jsonplaceholder.typicode.com/users")
+      .then((response) => {
+        const users = response.data.map((user) => user.id);
+        dispatch(fetchUsersSuccess(users));
+      })
+      .catch((err) => {
+        console.log(err);
+        dispatch(fetchUsersFailed(err.message));
+      });
+  };
+};
+
+const store = redux.createStore(
+  reducer,
+  applyMiddleware(logger, thunkMiddleware)
+);
 
 const unsubscribe = store.subscribe(() => {});
 
 store.dispatch(fetchUsersRequest());
-store.dispatch(
-  fetchUsersSuccess([
-    { name: "Ravi", age: 23 },
-    { name: "Raj", age: 20 },
-  ])
-);
-store.dispatch(fetchUsersFailed("Users data cannot be fetched...!"));
+// store.dispatch(
+//   fetchUsersSuccess([
+//     { name: "Ravi", age: 23 },
+//     { name: "Raj", age: 20 },
+//   ])
+// );
+// store.dispatch(fetchUsersFailed("Users data cannot be fetched...!"));
+store.dispatch(fetchUsers());
 
 unsubscribe();
