@@ -46,3 +46,7 @@
 #### It is the suggested way to extend Redux with custom functionality.
 #### Provides a third-party extension point between dispatching an action, and the moment it reaches the reducer.
 #### Use middleware for logging, crash reporting, performance asynchronous tasks etc.
+
+### Async Actions
+
+#### 
