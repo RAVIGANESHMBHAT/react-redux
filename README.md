@@ -40,3 +40,9 @@
 ### Immer library
 
 #### When we need to create the copy of object, we usually use spread operator and update the required attribute of the object with new values. But it will be difficult with nested objects. So, we can use the Immer library.
+
+### Middleware
+
+#### It is the suggested way to extend Redux with custom functionality.
+#### Provides a third-party extension point between dispatching an action, and the moment it reaches the reducer.
+#### Use middleware for logging, crash reporting, performance asynchronous tasks etc.
