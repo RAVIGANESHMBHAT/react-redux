@@ -82,6 +82,12 @@ const iceCreamReducer = (state = initialIceCreamState, action) => {
         ...state,
         numOfIceCreams: state.numOfIceCreams + action.payload,
       };
+    //when the user buys a cake, an icecream will be given for free
+    case CAKE_ORDERED:
+      return {
+        ...state,
+        numOfIceCreams: state.numOfIceCreams - action.payload
+      }
     default:
       return state;
   }

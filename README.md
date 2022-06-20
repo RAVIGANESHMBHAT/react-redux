@@ -65,3 +65,11 @@
 
 ### Apply Middleware with redux toolkit
 #### By default the configureStore function adds some middlewares to redux store automatically. So, when we add some new middleware, we need to concate our middleware with getDefaultMiddleware()
+
+### In Redux, performing one operation in one reducer when action happened in the states of other reducer
+#### In the current commit, When a cake is ordered, an icecream will be given for free. So, whenever the CAKE_ORDERED action happens, the numOfIcecreams must be decremented by one. A particular reducer can update only it's portion of the application states, but it can respond to any action dispatched in the application. So, decrementing numOfIcecreams can only be done in the iceCreamReducer, but it can respond to the CAKE_ORDERED action.
+#### This scenario can be handled by using Extra Reducers in the Redux Toolkit
+
+### In Redux Toolkit, using the Extra Reducers
+
+#### These are the reducers created apart from the reducers created by createSlice.
