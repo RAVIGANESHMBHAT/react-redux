@@ -76,4 +76,11 @@
 
 ### Async Thunks
 
-#### 
+#### ...
+
+### useSelector Hook
+#### To read data from the redux store in a react component, we use useSelector hook. It is a kind of wrapper around the store.getState()
+
+### useDispatch Hook
+
+#### Used to dispatch an action with React redux
