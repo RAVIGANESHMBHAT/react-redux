@@ -1,11 +1,16 @@
-import React from 'react'
+import React from "react";
+import { useSelector } from "react-redux";
 
 export const CakeView = () => {
+  const numOfCakes = useSelector((state) => {
+    return state.cake.numOfCakes;
+  });
+
   return (
-      <div>
-          <h2>Number of cakes = </h2>
-          <button>Order cakes</button>
-          <button>Restock cakes</button>
+    <div>
+      <h2>Number of cakes = {numOfCakes}</h2>
+      <button>Order cakes</button>
+      <button>Restock cakes</button>
     </div>
-  )
-}
+  );
+};
