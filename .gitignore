@@ -5,7 +5,7 @@
 /.pnp
 .pnp.js
 
-/react-toolkit-demo/node_modules
+/react-redux-toolkit-demo/node_modules
 
 # testing
 /coverage
