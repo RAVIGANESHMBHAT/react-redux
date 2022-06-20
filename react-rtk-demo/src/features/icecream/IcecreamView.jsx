@@ -16,7 +16,7 @@ export const IcecreamView = () => {
       <input
         type="number"
         value={orderCount}
-        onChange={(e) => setOrderCount(paresInt(e.target.value))}
+        onChange={(e) => setOrderCount(parseInt(e.target.value))}
       />
       <button onClick={() => dispatch(ordered(orderCount))}>
         Order Icecreams

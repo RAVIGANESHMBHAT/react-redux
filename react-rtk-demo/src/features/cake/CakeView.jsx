@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import { ordered, restocked } from "./cakeSlice";
 
 export const CakeView = () => {
+  const [orderCount, setOrderCount] = useState(1);
+  const [restockCount, setRestockCount] = useState(1);
   const numOfCakes = useSelector((state) => {
     return state.cake.numOfCakes;
   });
@@ -13,8 +15,26 @@ export const CakeView = () => {
   return (
     <div>
       <h2>Number of cakes = {numOfCakes}</h2>
-      <button onClick={() => dispatch(ordered(3))}>Order cakes</button>
-      <button onClick={() => dispatch(restocked(4))}>Restock cakes</button>
+      <div>
+        <input
+          type="number"
+          value={orderCount}
+          onChange={(e) => setOrderCount(parseInt(e.target.value))}
+        />
+        <button onClick={() => dispatch(ordered(orderCount))}>
+          Order cakes
+        </button>
+      </div>
+      <div>
+        <input
+          type="number"
+          value={restockCount}
+          onChange={(e) => setRestockCount(parseInt(e.target.value))}
+        />
+        <button onClick={() => dispatch(restocked(restockCount))}>
+          Restock cakes
+        </button>
+      </div>
     </div>
   );
 };
