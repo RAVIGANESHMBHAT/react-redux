@@ -84,3 +84,8 @@
 ### useDispatch Hook
 
 #### Used to dispatch an action with React redux
+
+### Redux Devtools
+#### Chrome extension: https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd/related?hl=en
+
+
