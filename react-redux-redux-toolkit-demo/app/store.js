@@ -4,12 +4,14 @@ const reduxLogger = require('redux-logger')
 const cakeReducer = require('../features/cake/cakeSlice')
 const iceCreamReducer = require('../features/icecream/icecreamSlice')
 const logger = reduxLogger.createLogger()
+const userReducer = require('../features/user/userSlice')
 
 
 const store = configureStore({
     reducer: {
         cake: cakeReducer,
-        icecream: iceCreamReducer
+        icecream: iceCreamReducer,
+        user: userReducer
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger)
 })

@@ -73,3 +73,7 @@
 ### In Redux Toolkit, using the Extra Reducers
 
 #### These are the reducers created apart from the reducers created by createSlice.
+
+### Async Thunks
+
+#### 
