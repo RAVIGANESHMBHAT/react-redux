@@ -63,3 +63,5 @@
 * A lot of other packages have to be installed to work with redux (EG: For async actions, we need Redux-Thunk, For handling nested state updates, we need Immer, ...)
 * Need to improve the developer experience for redux.
 
+### Apply Middleware with redux toolkit
+#### By default the configureStore function adds some middlewares to redux store automatically. So, when we add some new middleware, we need to concate our middleware with getDefaultMiddleware()
